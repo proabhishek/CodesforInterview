@@ -1,0 +1,29 @@
+k = [["1:00", 10], ["1:05", 12], ["1:10", 20], ["1:15", 9], ["1:20", 10] ]
+b = [["1:00", 2], ["1:05", 3], ["1:10", 5], ["1:15", 0], ["1:30", 2] ]
+
+
+def countDrivers(list1, list2):
+    list3 = []
+    countlist = [0]*len(b)
+    for l1 in list1:
+        c = 0
+        index =0
+        for l2 in list2:
+            if l1[0] == l2[0]:
+                list3.append([l1[0],l1[1]+l2[1]])
+                c = 1
+                countlist[index]=1
+            index = index +1
+        if c ==0:
+            list3.append(l1)
+
+    index = 0
+    for l3 in countlist:
+       if l3==0:
+          list3.append(list2[index])
+       index = index+1
+
+    return list3
+
+print(countDrivers(k,b))
+
