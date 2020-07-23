@@ -1,0 +1,13 @@
+ef typecast(s): #"1234"
+    s1 = "0123456789"
+    for i in s:
+        if s1.find(i) == -1:
+            return "String cannot be type casted to int"
+    n1 = 0
+    for i in s:
+        n = ord(i)#49
+        a = n-48
+        n1 = n1*10 +a
+    return n1
+
+print(typecast("12A67"))
